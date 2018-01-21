@@ -46,10 +46,7 @@ def build_final_contenst(contents, tocstr):
     header = 0
     for line in contents.split("\n"):
 
-        if len(line) <= 0:
-            continue
-
-        if line[0] == "#":
+        if len(line) >= 1 and line[0] == "#":
             header += 1
 
         if header == TOC_HEADER_NUMBER:
@@ -84,7 +81,7 @@ def insertTOC(fname):
 def main():
     print(__file__ + " start!!")
 
-    fname = "./README.md"
+    fname = "../README.md"
 
     insertTOC(fname)
 
